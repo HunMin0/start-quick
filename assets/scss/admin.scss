@@ -9,6 +9,7 @@
 // Admin 헤더
 .admin-header{
   @include flex-center;
+  height: 0;
   width: 100%;
   height: $size-base*7;
   background-color: $mainColor;
