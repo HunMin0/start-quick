@@ -1,0 +1,229 @@
+@import "mixins.scss";
+@import "variable.scss";
+
+// Admin 레이아웃
+.admin-inner {
+  @include inner-padding($admin-width, 0, $size-base*6);
+}
+
+// Admin 헤더
+.admin-header{
+  @include flex-center;
+  width: 100%;
+  height: $size-base*7;
+  background-color: $mainColor;
+  gap: $nav-interval;
+  // Admin 상단블럭
+  .logo-top {
+    width: $admin-left-width;
+    padding: 0 26px;
+    a {
+      color: #fff;
+      font-weight: 700;
+      font-size: $logo-title-size;
+      text-decoration: none;
+      img {
+        width: $logo-img-size-w;
+        height: $logo-img-size-h;
+      }
+    }
+  }
+  // Admin 상단메뉴
+  .nav-top {
+    ul {
+      @include flex-center;
+      list-style: none;
+      gap: $nav-interval;
+      li {
+        position: relative;
+        width: $nav-width;
+        text-align: center;
+        color: $nav-inactive;
+        font-weight: 400;
+        font-size: 15px;
+        &::before {
+          opacity: 0;
+          content: '';
+          position: absolute;
+          bottom: -24px;
+          left: 0;
+          width: $nav-width;
+          height: 10px;
+          background-color: $nav-activation;
+          border-radius: 8px 8px 0 0;
+        }
+        &:hover {
+          a {
+            color: $nav-activation;
+            transition: 0.35s;
+          }
+        }
+      }
+      .nuxt-link-active {
+        color: $nav-activation;
+        &::before{
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// Admin 섹션
+.admin-section {
+  width: 100%;
+  height: 100%;
+  @include flex-center;
+  // Admin 좌측메뉴
+  .admin-aside {
+    width: $admin-left-width;
+    height: auto;
+    min-height: calc(100vh - 70px);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    padding: 24px;
+    position: relative;
+    .site-user {
+      width: 210px;
+      height: 100px;
+      padding: 30px 24px;
+      background-color: #F3F5F7;
+      h1 {
+        font-size: 16px;
+        font-weight: 500;
+        color: #5B6571;
+      }
+      p {
+        font-size: 12px;
+        color: #A8B4BF;
+        margin: 0;
+      }
+    }
+    .nav-side {
+      ul {
+        list-style: none;
+        li {
+          position: relative;
+          padding: 14px 5px;
+          border-bottom: 1px solid #e4e9ee;
+          transition: 0.35s;
+          a {
+            font-size: 14px;
+            font-weight: 400;
+            color: $nav-side-inactive;
+            img {
+              height: 20px;
+            }
+          }
+          &::after {
+            content: '';
+            display:block;
+            position: absolute;
+            height: 2px;
+            width: 0;
+            left: 0;
+            bottom: 0;
+            border-bottom: solid 2px $nav-border-line;
+            transition: width 0.35s ease-in-out;
+          }
+          &:hover {
+            padding: 14px 10px;
+            a {
+              color: $nav-side-activation;
+            }
+          }
+          &:hover::after {
+            width: 100%;
+          }
+        }
+        .active {
+          border-bottom: 2px solid $secondColor;
+          a {
+            color: $mainColor!important;
+            font-weight: 500;
+          }
+          &::after {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+  .admin-container{
+    width: 100%;
+    // Admin 컨텐츠 헤더
+    .container-head {
+      @include flex-center;
+      width: 100%;
+      height: 90px;
+      background-color: #F3F5F7;
+      div {
+        @include flex-center-between;
+        gap: 25px;
+        .container-title {
+          @include flex-end-start;
+          h1 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #4a4a4a;
+          }
+          p {
+            font-size: 14px;
+            color: #707070;
+          }
+        }
+        .container-info {
+          @include flex-center-start;
+          gap: 14px;
+          p {
+            font-size: 16px;
+            color: #828689;
+            font-weight: 400;
+            span {
+              color: #F8305F;
+            }
+          }
+          .volume {
+            width: 128px;
+            height: 20px;
+            background-color: #E3E3E3;
+            position: relative;
+            &::after {
+              content: '';
+              position: absolute;
+              top:0;
+              left:0;
+              height: 20px;
+              width:0;
+              animation: progress 4s ease forwards;
+              background-color: #F44336;
+            }
+            @keyframes progress{
+              0%{width: 0px}
+              100%{width: 60%;}
+            }
+          }
+
+        }
+      }
+    }
+    // Admin 컨텐츠영역
+    .container-content {
+      .content-set {
+        width: 100%;
+        height: auto;
+        min-height: calc(100vh - 230px);
+        padding: 40px 0;
+      }
+
+      // Admin 푸터
+      footer {
+        width: 100%;
+        height: 70px;
+        line-height: 70px;
+        font-size: 14px;
+        color: #707070;
+        background-color: #F3F5F7;
+      }
+    }
+  }
+}
