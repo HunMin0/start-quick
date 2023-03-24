@@ -1,6 +1,6 @@
 <template>
   <div>
-    대시보드
+    약관 설정
 
   </div>
 </template>
@@ -8,7 +8,7 @@
 <script>
 
 export default {
-  name: "admin",
+  name: "terms",
   layout: "admin",
   data: () => ({
 

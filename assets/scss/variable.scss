@@ -6,6 +6,8 @@ $font-base: 10px;
 $color: (
   main-color: #0051CB,
   second-color: #1f66d1,
+  reference-color: #A4A4A4,
+  placeholder-color: #adadad,
   basic-color: #fff,
   font-color-w: #fff
 );
@@ -42,4 +44,17 @@ $admin-side: (
 $admin-fotter: (
   height: 70px,
   bg: #F3F5F7,
+);
+
+// Admin 보더 컬러
+$border-color: (
+  basic: #eaeaea,// 일반
+);
+
+// Admin 대시보드 상태현황 컬러
+$status-color: (
+  basic: #111, // 기본
+  inactivec: #C2C2C2, // 비활성 컬러
+  activation: #157D50, // 활성 컬러
+  emphasis: #FF0000, // 강조 컬러
 );

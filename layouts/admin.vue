@@ -77,17 +77,17 @@ export default {
   data () {
     return {
       lists: [
-        {link: '/admin', title: '대시보드'},
-        {link: '/design', title: '디자인관리'},
-        {link: '/statistics', title: '통계'},
-        {link: '/setting', title: '환경설정'},
+        {link: '/admin/dashboard', title: '대시보드'},
+        {link: '/admin/design', title: '디자인관리'},
+        {link: '/admin/statistics', title: '통계'},
+        {link: '/admin/setting', title: '환경설정'},
       ],
       dash_lists: [
-        {link: '/admin', title: '대시보드'},
-        {link: '/design', title: '팝업/배너 설정'},
-        {link: '/sns', title: 'SNS 로그인 설정'},
-        {link: '/hosting', title: '호스팅/도메인 관리'},
-        {link: '/terms', title: '약관 및 개인정보 설정'},
+        {link: '/admin/dashboard', title: '대시보드'},
+        {link: '/admin/dashboard/popup', title: '팝업/배너 설정'},
+        {link: '/admin/dashboard/snslogin', title: 'SNS 로그인 설정'},
+        {link: '/admin/dashboard/hosting', title: '호스팅/도메인 관리'},
+        {link: '/admin/dashboard/terms', title: '약관 및 개인정보 설정'},
       ],
     }
   }
