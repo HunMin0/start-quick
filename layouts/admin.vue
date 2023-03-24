@@ -27,25 +27,15 @@
           </div>
           <nav class="nav-side">
             <ul>
-              <li class="active">
-                <a href="#none">
-                  <img src="/" alt="" />대시보드</a>
-              </li>
-              <li>
-                <a href="#none">팝업/배너 설정</a>
-              </li>
-              <li>
-                <a href="#none">홈페이지 설정</a>
-              </li>
-              <li>
-                <a href="#none">SNS 로그인 설정</a>
-              </li>
-              <li>
-                <a href="#none">호스팅/도메인 관리</a>
-              </li>
-              <li>
-                <a href="#none">약관 및 개인정보 설정</a>
-              </li>
+               <router-link
+                  v-for="list in dash_lists"
+                  :key="list.key"
+                  :to="list.link"
+                  tag="li"
+                  class="header-menu-list"
+                  class-active="active"
+                  exact>{{list.title}}
+                </router-link>
             </ul>
           </nav>
         </aside>
@@ -89,9 +79,16 @@ export default {
       lists: [
         {link: '/admin', title: '대시보드'},
         {link: '/design', title: '디자인관리'},
-        {link: '/sad', title: '통계'},
-        {link: '/sads', title: '환경설정'},
-      ]
+        {link: '/statistics', title: '통계'},
+        {link: '/setting', title: '환경설정'},
+      ],
+      dash_lists: [
+        {link: '/admin', title: '대시보드'},
+        {link: '/design', title: '팝업/배너 설정'},
+        {link: '/sns', title: 'SNS 로그인 설정'},
+        {link: '/hosting', title: '호스팅/도메인 관리'},
+        {link: '/terms', title: '약관 및 개인정보 설정'},
+      ],
     }
   }
 }

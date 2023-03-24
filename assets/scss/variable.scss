@@ -1,64 +1,45 @@
-// Color
-$mainColor: #0051CB;
-$secondColor: #1f66d1;
-$basicColor: #fff;
-$font-Color-w: #fff;
-
 // size-base
 $size-base: 10px;
 $font-base: 10px;
 
+// Color
+$color: (
+  main-color: #0051CB,
+  second-color: #1f66d1,
+  basic-color: #fff,
+  font-color-w: #fff
+);
+
 // Admin 로고사이즈
-$logo-title-color: #fff;
-$logo-title-size: 20px;
-$logo-img-size-w: auto;
-$logo-img-size-h: 70px;
+$admin-logo-tab: (
+  title-color: #fff,
+  title-size: 20px,
+  img-size-w: auto,
+  img-size-h: 70px,
+);
 
 // Admin 상단메뉴
-$nav-width: 110px;
-$nav-interval: 50px; // 간격
-$nav-inactive: #a6c2ed; // 비활성 컬러
-$nav-activation: #ffffff; // 활성 컬러
-//$nav-font-size: $font-base*2;
+$admin-nav-tab : (
+  width: 110px,
+  interval: 50px, // 간격
+  inactivec: #a6c2ed, // 비활성 컬러
+  activation: #ffffff, // 활성 컬러
+  //nav-font-size: $font-base*2,
+);
 
 // Admin 컨텐츠 기준사이즈
 $admin-width: 1296px;
 
 // Admin 사이드메뉴
-$admin-left-width: 265px;
-$nav-border-line: #ededed;
-$nav-side-inactive: #767676; // 비활성 컬러
-$nav-side-activation: #3c3c3c; // 오버 컬러
+$admin-side: (
+  side-width: 265px,
+  border-line: #ededed,
+  inactivec: #767676, // 비활성 컬러
+  activation: #3c3c3c, // 오버 컬러
+);
 
 // Admin 푸터
-$admin-fotter-height: 70px;
-$admin-fotter-bg: #F3F5F7;
-
-
-
-
-
-
-// Map-get Array Parameter
-$font-family: (
-  kor: 'Noto Sans KR',
-  eng: 'Montserrat'
-);
-$font-color: (
-  primary: #222,
-  secondary: #555
-);
-$font-size: (
-  base: 15px,
-  large-heading: 60px,
-  medium-heading: 45px,
-  small-heading: 20px
-);
-$bg-color: (
-  primary: #fff,
-  secondary: #f8f8f8
-);
-$btn-color: (
-  pc: crimson,
-  mobile: royalblue
+$admin-fotter: (
+  height: 70px,
+  bg: #F3F5F7,
 );

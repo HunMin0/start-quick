@@ -1,0 +1,66 @@
+@import "variable";
+@import "mixins";
+@import "admin";
+
+//////////////////////////////////////
+// Admin 레이아웃
+//////////////////////////////////////
+
+.admin-inner {
+  @include inner-padding($admin-width, 0, $size-base*6);
+}
+
+//////////////////////////////////////
+// Admin 상단
+//////////////////////////////////////
+
+.admin-header{
+  @include admin-header;
+  // Admin 로고블럭
+  .logo-top {
+    @include logo-top;
+  }
+  // Admin 상단네비
+  .nav-top {
+    @include nav-top;
+  }
+}
+
+//////////////////////////////////////
+// Admin 컨텐츠
+//////////////////////////////////////
+
+.admin-section {
+  @include admin-section;
+
+  // Admin 좌측 컨텐츠
+  .admin-aside {
+    @include admin-aside;
+    .site-user {
+      @include site-user;
+    }
+    .nav-side {
+      @include nav-side;
+    }
+  }
+  // Admin 우측 컨텐츠
+  .admin-container{
+    @include admin-container;
+
+    // Admin 우측 컨텐츠 헤더
+    .container-head {
+      @include container-head;
+    }
+    // Admin 우측 컨텐츠 영역
+    .container-content {
+      .content-set {
+        @include content-set;
+      }
+
+      // Admin 우측 컨텐츠 푸터
+      footer {
+        @include footer;
+      }
+    }
+  }
+}

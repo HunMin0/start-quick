@@ -15,6 +15,11 @@
   position: relative;
 }
 
+// img - Mixins
+@mixin bg($name, $path: "/images/", $format: "png") {
+  background-image: url("#{$path}#{$name}.#{$format}");
+}
+
 // Flex - Mixins
 @mixin flex-center {
   display: flex;
