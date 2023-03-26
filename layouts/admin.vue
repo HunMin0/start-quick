@@ -14,6 +14,7 @@
                   tag="li"
                   class="header-menu-list"
                   class-active="active"
+                  :title="list.title"
                   exact>{{list.title}}
                 </router-link>
               </ul>
@@ -34,6 +35,7 @@
                   tag="li"
                   class="header-menu-list"
                   class-active="active"
+                  :title="list.title"
                   exact>{{list.title}}
                 </router-link>
             </ul>

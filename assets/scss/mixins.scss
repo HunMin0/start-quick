@@ -20,6 +20,48 @@
   background-image: url("#{$path}#{$name}.#{$format}");
 }
 
+// admin-option - Mixins
+@mixin option-group {
+  width: 100%;
+  position: relative;
+  &-title {
+    @include flex-start-start;
+    gap: 20px;
+    padding-bottom: $size-base*2.5;
+    border-bottom: 2px solid map-get($color, main-color);
+    h1 {
+      font-size: 16px;
+      color: map-get($color, main-color);
+    }
+    p {
+      font-size: 12px;
+      color: map-get($color, reference-color);
+    }
+  }
+  &-between {
+    @include flex-start-between;
+    padding-bottom: $size-base*2.5;
+    border-bottom: 2px solid map-get($color, main-color);
+    h1 {
+      font-size: 16px;
+      color: map-get($color, main-color);
+    }
+    p {
+      font-size: 13px;
+      color: map-get($color, reference-color);
+    }
+    // Admin 대시보드 통계 셀렉트
+    .date-selectbox {
+      border: 1px solid #ddd;
+      padding: 4px 10px;
+      border-radius: 4px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
 // Flex - Mixins
 @mixin flex-center {
   display: flex;

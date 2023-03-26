@@ -11,3 +11,18 @@
         }
     ]
 }
+
+
+{
+    "git.autofetch": true,
+    "window.zoomLevel": 1,
+    "liveSassCompile.settings.generateMap": false,
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "compressed",
+            "extensionName": ".css",
+            "savePath": "~/../css",
+            "savePathReplacementPairs": null
+        }
+    ]
+}

@@ -64,3 +64,37 @@
     }
   }
 }
+
+//////////////////////////////////////
+// Admin 컨텐츠 옵션기본
+//////////////////////////////////////
+
+.option-grid {
+  @include flex-start-center;
+  margin-bottom: 60px;
+}
+.option-grid-two {
+  @extend .option-grid;
+  gap: 40px;
+}
+.option {
+  @include option-group;
+  
+  // 대시보드 컨텐츠 area 기본
+  &-container {
+    position: relative;
+  }
+  // 대시보드 컨텐츠 area 상태현황
+  &-status {
+    @include option-status;
+  }
+  // 대시보드 컨텐츠 area 관리메모
+  &-memo {
+    @include option-memo;
+  }
+  // 대시보드 컨텐츠 area 게시물
+  &-board {
+    @include option-board;
+  }
+
+}

@@ -40,6 +40,7 @@
       color: map-get($admin-nav-tab, inactivec);
       font-weight: 400;
       font-size: 15px;
+      cursor: pointer;
       &::before {
         opacity: 0;
         content: '';
@@ -115,6 +116,7 @@
       padding: 14px 5px;
       border-bottom: 1px solid #e4e9ee;
       transition: 0.35s;
+      cursor: pointer;
       a {
         font-size: 14px;
         font-weight: 400;
@@ -232,4 +234,202 @@
   font-size: 14px;
   color: #707070;
   background-color: map-get($admin-fotter, bg);
+}
+
+//////////////////////////////////////
+// Admin 대시보드 컨텐츠
+//////////////////////////////////////
+
+// 대시보드 상태현황
+@mixin option-status {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-left: 1px solid map-get($border-color, basic);
+  .status-item {
+    padding: 25px 16px;
+    border-bottom: 1px solid map-get($border-color, basic);
+    border-right: 1px solid map-get($border-color, basic);
+    h1 {
+      font-size: 12px;
+      color: #9E9E9E;
+      margin-bottom: 20px;
+    }
+    a {
+      display: block;
+      width: 100%;
+      text-align: right;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .color-basic {
+      color: map-get($status-color, basic);
+    }
+    .color-inactivec {
+      color: map-get($status-color, inactivec);
+      text-decoration: underline;
+      font-weight: 400;
+    }
+    .color-activation {
+      color: map-get($status-color, activation);
+    }
+    .color-emphasis {
+      color: map-get($status-color, emphasis);
+    }
+  }
+}
+
+// 관리자단 버튼
+.btn {
+  display: block;
+  margin: 4px 0;
+  padding: 6px 24px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  transition: .35s;
+  cursor: pointer;
+}
+// 관리자단 활성버튼
+.option-btn {
+  @extend .btn;
+  color: #fff;
+  background-color: #4082e9;
+  &:hover {
+    background-color: #5b8fdf;
+  }
+}
+// 관리자단 아웃라인 버튼
+.option-btn-outline {
+  @extend .btn;
+  color: #333;
+  padding: 6px 20px;
+  border: 1px solid #f0f0f0;
+  background-color: #fff;
+  &:hover {
+    background-color: #f9f9f9;
+  }
+}
+// 관리자단 비활성 버튼
+.option-btn-disabled {
+  @extend .btn;
+  color: #cbcbcb;
+  background-color: #f0f0f0;
+}
+// 게시판 리스트 알림박스
+.bd-list {
+  width: 54px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  border-radius: 4px;
+}
+.bd-noclear {
+  @extend .bd-list;
+  background: #FF9800;
+}
+.bd-clear {
+  @extend .bd-list;
+  background: #4CAF50;
+}
+
+@mixin btn-area {
+  @include flex-center-between;
+  p {
+    font-size: 13px;
+    color: map-get($color, reference-color);
+    span {
+      color: #111;
+      font-weight: 500;
+    }
+  }
+}
+
+// 대시보드 관리메모
+@mixin option-memo {
+  width: 100%;
+  textarea {
+    width: 100%;
+    border: 1px solid map-get($border-color, basic);
+    padding: 20px;
+    height: 170px;
+    font-size: 12px;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: map-get($color, placeholder-color);
+    }
+  }
+  .btn-area {
+    @include btn-area;
+  }
+}
+
+// Admin 대시보드 게시물
+@mixin option-board {
+  ul {
+    li {
+      @include flex-center-between;
+      gap: 20px;
+      font-size: 14px;
+      padding: 18px 10px;
+      border-bottom: 1px solid map-get($border-color, basic);
+      position: relative;
+      label {
+        @include flex-center-between;
+        gap: 20px;
+      }
+      .board-subject {
+        @include flex-center-between;
+        width: 100%;
+      }
+      &::after {
+        content:"";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: #f3f3f3;
+        transition: 0.7s;
+      }
+      &:hover {
+        p, a {
+          color: #3b6099;
+        }
+      }
+      &:hover::after {
+        width: 100%;
+
+      }
+    }
+  }
+
+  .btn-area {
+    @include btn-area;
+    margin-top: 8px;
+    .check-delete {
+      padding: 0 10px;
+      @include flex-center;
+      gap: 10px;
+      label {
+        font-size: 13px;
+        padding: 2px 8px;
+        background-color: #efefef;
+        border-radius: 6px;
+        font-weight: 400;
+        color: #959595;
+        cursor: pointer;
+        &:hover {
+          background-color: #f1f1f1;
+          color: #3e3e3e;
+        }
+      }
+    }
+    .btn-group {
+      padding: 0 10px;
+      @include flex-center;
+      gap: 10px;
+    }
+  }
 }
