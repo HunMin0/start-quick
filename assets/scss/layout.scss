@@ -79,7 +79,7 @@
 }
 .option {
   @include option-group;
-  
+
   // 대시보드 컨텐츠 area 기본
   &-container {
     position: relative;
@@ -96,5 +96,6 @@
   &-board {
     @include option-board;
   }
+  // 대시보드 컨텐츠 area 옵션
 
 }

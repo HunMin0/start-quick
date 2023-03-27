@@ -5,7 +5,7 @@
       <div class="option">
         <div class="option-title">
           <h1>상태현황</h1>
-          <p>추가로 사용하실 meta 태그를 입력합니다.</p>
+          <p>운영중인 홈페이지의 현재상태를 안내합니다.</p>
         </div>
         <div class="option-status">
           <div class="status-item">
@@ -45,7 +45,7 @@
       <div class="option">
         <div class="option-title">
           <h1>관리메모</h1>
-          <p>추가로 사용하실 meta 태그를 입력합니다.</p>
+          <p>운영관련 메모를 남겨주세요.</p>
         </div>
         <div class="option-memo">
           <textarea name="work-records" id="work-records" cols="30" rows="10" placeholder="공유하실 업무 관련 내용을 등록해주세요."></textarea>

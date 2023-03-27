@@ -23,7 +23,7 @@
       <section class="admin-section">
         <aside class="admin-aside">
           <div class="site-user">
-            <h1>퀵스타트 관리자</h1>
+            <h1><i class="fa-solid fa-circle-user"></i> &nbsp;퀵스타트 관리자</h1>
             <p>(1.0.0 ver 기준)</p>
           </div>
           <nav class="nav-side">
@@ -36,7 +36,7 @@
                   class="header-menu-list"
                   class-active="active"
                   :title="list.title"
-                  exact>{{list.title}}
+                  exact><i :class="list.icon"></i>&emsp;{{list.title}}
                 </router-link>
             </ul>
           </nav>
@@ -85,11 +85,12 @@ export default {
         {link: '/admin/setting', title: '환경설정'},
       ],
       dash_lists: [
-        {link: '/admin/dashboard', title: '대시보드'},
-        {link: '/admin/dashboard/popup', title: '팝업/배너 설정'},
-        {link: '/admin/dashboard/snslogin', title: 'SNS 로그인 설정'},
-        {link: '/admin/dashboard/hosting', title: '호스팅/도메인 관리'},
-        {link: '/admin/dashboard/terms', title: '약관 및 개인정보 설정'},
+        {link: '/admin/dashboard', title: '대시보드', icon: 'fa-solid fa-tv'},
+        {link: '/admin/dashboard/popup', title: '팝업/배너 설정', icon: 'fa-solid fa-table-columns'},
+        {link: '/admin/dashboard/homepage', title: '홈페이지 설정', icon: 'fa-solid fa-chart-gantt'},
+        {link: '/admin/dashboard/snslogin', title: 'SNS 로그인 설정', icon: 'fa-solid fa-toggle-off'},
+        {link: '/admin/dashboard/hosting', title: '호스팅/도메인 관리', icon: 'fa-regular fa-clipboard'},
+        {link: '/admin/dashboard/terms', title: '약관 및 개인정보 설정', icon: 'fa-regular fa-file-lines'},
       ],
     }
   }

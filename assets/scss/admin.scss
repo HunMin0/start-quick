@@ -76,7 +76,7 @@
 @mixin admin-section {
   width: 100%;
   height: 100%;
-  @include flex-center;
+  display: flex;
 }
 
 // Admin 좌측 컨텐츠
@@ -289,6 +289,26 @@
   transition: .35s;
   cursor: pointer;
 }
+
+// 관리자단 세컨드 활성버튼
+.option-btn-s {
+  @extend .btn;
+  padding: 8px 20px;
+  color: #fff;
+  background-color: #1f66d1;
+  &:hover {
+    background-color: #5b8fdf;
+  }
+}
+
+// 관리자단 비활성 버튼
+.option-btn-s-disabled {
+  @extend .btn;
+  padding: 8px 20px;
+  color: #cbcbcb;
+  background-color: #f0f0f0;
+}
+
 // 관리자단 활성버튼
 .option-btn {
   @extend .btn;
@@ -298,6 +318,7 @@
     background-color: #5b8fdf;
   }
 }
+
 // 관리자단 아웃라인 버튼
 .option-btn-outline {
   @extend .btn;
@@ -315,6 +336,7 @@
   color: #cbcbcb;
   background-color: #f0f0f0;
 }
+
 // 게시판 리스트 알림박스
 .bd-list {
   width: 54px;
@@ -433,3 +455,5 @@
     }
   }
 }
+
+// Admin 대시보드 게시물
