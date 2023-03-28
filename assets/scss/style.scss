@@ -137,11 +137,12 @@
     height: 210px;
     .item-option {
       width: 960px;
+      height: 80%;
       textarea {
         width: 100%;
         border: 1px solid map-get($border-color, basic);
         padding: 20px;
-        height: 170px;
+        height: 100%;
         font-size: 12px;
         &:focus {
           outline: none;
@@ -151,6 +152,39 @@
         }
       }
     }
+  }
+
+  // 약관 텍스트에어리어 설정
+  .option-items-terms {
+    @extend .option-items;
+    height: 500px;
+    .item-option {
+      width: 960px;
+      height: 90%;
+      margin: 0 0 0 20px;
+      textarea {
+        width: 100%;
+        border: 1px solid map-get($border-color, basic);
+        padding: 20px;
+        height: 100%;
+        font-size: 12px;
+        &:focus {
+          outline: none;
+        }
+        &::placeholder {
+          color: map-get($color, placeholder-color);
+        }
+      }
+    }
+  }
+
+  // Admin 옵션 설정 하단 참고문구
+  h3 {
+    font-size: 13px;
+    color: #a4a4a4;
+    margin-top: 30px;
+    font-weight: 300;
+    line-height: 22px;
   }
 }
 
