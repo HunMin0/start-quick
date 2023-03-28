@@ -8,6 +8,7 @@
 @import "layout";
 @import "admin";
 
+/*
 // Admin 옵션 설정 기본 셋
 .option-setting {
   .option-items {
@@ -131,7 +132,7 @@
     }
   }
 
-  // 텍스트에어리어 설정
+  // 옵션 textarea 설정
   .option-items2 {
     @extend .option-items;
     height: 210px;
@@ -154,7 +155,7 @@
     }
   }
 
-  // 약관 텍스트에어리어 설정
+  // 약관 textarea 설정
   .option-items-terms {
     @extend .option-items;
     height: 500px;
@@ -178,7 +179,7 @@
     }
   }
 
-  // Admin 옵션 설정 하단 참고문구
+  // Admin 컨텐츠 설정 하단 참고문구
   h3 {
     font-size: 13px;
     color: #a4a4a4;
@@ -202,14 +203,17 @@
   }
   .btn{
     @extend button;
+    //저장버튼
     &-save {
       background-color: #4082E9;
       font-weight: 400;
     }
+    //다음버튼
     &-next {
       background-color: #0051CB;
       font-weight: 400;
     }
+    //비활성버튼
     &-disble {
       color: #cbcbcb;
       background-color: #f0f0f0;
@@ -217,3 +221,4 @@
     }
   }
 }
+*/

@@ -66,7 +66,7 @@
 }
 
 //////////////////////////////////////
-// Admin 컨텐츠 옵션기본
+// Admin 컨텐츠 옵션 레이아웃
 //////////////////////////////////////
 
 .option-grid {
@@ -98,4 +98,39 @@
   }
   // 대시보드 컨텐츠 area 옵션
 
+}
+
+//////////////////////////////////////
+// Admin 컨텐츠 옵션영역
+//////////////////////////////////////
+
+  // Admin 옵션 설정 기본 셋
+.option-setting {
+  .option-items {
+    // area설정 & 타이틀 & 하단텍스트
+    @include option-items;
+    .item-option { // 기본 옵션바
+      @include item-option;
+    }
+    .item-option-340 { // 옵션바 임의사이즈 변경
+      @include item-option-340;
+    }
+  }
+  // 옵션 컨텐츠 반복섹션 textarea 
+  .option-items2 {
+    @include option-items2;
+  }
+  // 약관 컨텐츠 반복섹션 textarea
+  .option-items-terms {
+    @include option-items-terms;
+  }
+  // Admin 컨텐츠 설정 하단 참고문구
+  h3 {
+    @include area-bottom-text;
+  }
+}
+
+// Admin Page 하단 버튼
+.page-btn {
+  @include page-btn;
 }
