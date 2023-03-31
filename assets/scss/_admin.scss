@@ -1,3 +1,30 @@
+.font{
+  &-basic {
+    font-size: 14px;
+    font-weight: 400;
+  }
+  &-main {
+    font-size: 14px;
+    font-weight: 400;
+    color: map-get($color, main-color);
+  }
+  &-second {
+    font-size: 14px;
+    font-weight: 400;
+    color: map-get($color, second-color);
+  }
+  &-disble {
+    font-size: 14px;
+    font-weight: 300;
+    color: map-get($color, disble-color);
+  }
+  &-delete {
+    font-size: 14px;
+    font-weight: 400;
+    color: map-get($color, delete-color);
+  }
+}
+
 //////////////////////////////////////
 // Admin 상단
 //////////////////////////////////////
@@ -282,31 +309,59 @@
 .btn {
   display: block;
   margin: 4px 0;
-  padding: 6px 24px;
+  padding: 8px 20px;
   border: none;
   border-radius: 3px;
   outline: none;
   transition: .35s;
   cursor: pointer;
+  &:focus-visible {
+    outline-offset: max(2px, 0.1em);
+    outline: max(2px, 0.1em) dotted #ff5722;
+  }
 }
 
 // 관리자단 세컨드 활성버튼
 .option-btn-s {
   @extend .btn;
-  padding: 8px 20px;
   color: #fff;
   background-color: #1f66d1;
   &:hover {
     background-color: #5b8fdf;
+  }
+  a {
+    &:focus-visible {
+      outline-offset: max(2px, 0.1em);
+      outline: max(2px, 0.1em) dotted #ff5722;
+    }
   }
 }
 
 // 관리자단 비활성 버튼
 .option-btn-s-disabled {
   @extend .btn;
-  padding: 8px 20px;
   color: #cbcbcb;
   background-color: #f0f0f0;
+}
+
+// 관리자단 강조 버튼
+.option-btn-s-delete {
+  @extend .btn;
+  color: #fff;
+  background-color: #fb7b52;
+  &:hover {
+    background-color: #ff5722;
+  }
+}
+
+// 관리자단 일반 dark버튼
+.option-btn-s-dark {
+  @extend .btn;
+  color: #fff;
+  background-color: #999999;
+  &:hover {
+    background-color: #6c6c6c;
+  }
 }
 
 // 관리자단 활성버튼
@@ -457,31 +512,50 @@
 }
 
 //////////////////////////////////////
-// Admin 대시보드 컨텐츠 옵션필드 
+// Admin 대시보드 컨텐츠 옵션필드
 //////////////////////////////////////
 
 // 옵션 컨텐츠 area설정
 @mixin option-items {
-  @include flex-center-start;
+  @include flex-stretch-start;
   width: 100%;
-  height: 56px;
+  min-height: 56px;
+  height: auto;
   border-bottom: 1px solid #EFEFEF;
   // 옵션컨텐츠 타이틀
   .item-title {
     @include flex-center;
-    width: 200px;
-    height: 100%;
+    min-width: 200px;
+    height: auto;
+    min-height: 56px;
     background-color: #f6f6f6;
     text-indent: 24px;
     font-weight: 500;
     color: #323232;
     font-size: 13px;
   }
+  .item-title2 {
+    @extend .item-title;
+    min-width: 130px;
+  }
+  .item-column {
+    width: 100%;
+    padding: 16px 0;
+    .item-row {
+      width: 100%;
+      @include flex-center-start;
+    }
+  }
   .item-text {
+    @include flex-center;
     p {
       font-size: 12px;
       color: #A4A4A4;
     }
+  }
+  .item-text-m {
+    @extend .item-text;
+    margin: 10px 20px 0;
   }
 }
 
@@ -490,7 +564,7 @@
   @include flex-center-start;
     margin: 0 20px 0 20px;
     font-size: 15px;
-    width: 220px;
+    min-width: 220px;
     input[type=checkbox] {
       vertical-align: middle;
       appearance: none;
@@ -532,7 +606,7 @@
       transition: border 0.2s ease-in-out;
       width: 20px;
       height: 20px;
-      margin: 0 10px;
+      margin: 0 10px 0 0;
       &:checked {
         border: 0.4em solid map-get($color, main-color);
       }
@@ -566,6 +640,13 @@
       &::placeholder {
         color: map-get($color, placeholder-color);
       }
+      &:disabled {
+        border: 1px solid #f0f0f0;
+      }
+      &:focus-visible {
+        outline-offset: max(2px, 0.1em);
+        outline: max(2px, 0.1em) dotted #ff5722;
+      }
     }
     input[type=email] {
       border: 1px solid #cbcbcb;
@@ -575,10 +656,95 @@
       &::placeholder {
         color: map-get($color, placeholder-color);
       }
+      &:focus-visible {
+        outline-offset: max(2px, 0.1em);
+        outline: max(2px, 0.1em) dotted #ff5722;
+      }
     }
-    label {
-      cursor: pointer;
+    .item-option-domain {
+      @include flex-center-start;
+      border: 1px solid #ebebeb;
+      padding: 10px 20px;
+      background-color: #fbfbfb;
+      margin-bottom: 5px;
+      div {
+        width: 300px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+        span {
+          font-weight: 400;
+        }
+      }
+      p {
+        width: 134px;
+        font-size: 14px;
+      }
+      .domain-btn {
+        @include flex-center-start;
+        gap: 8px;
+        margin-left: 10px;
+      }
     }
+}
+
+.item-option-box {
+  background-color: #fbfbfb;
+}
+
+// 옵션 컨텐츠 반복섹션 인풋 사이즈
+@mixin item-option2 {
+  @extend .item-option;
+  input[type=text] {
+    border: 1px solid #cbcbcb;
+    border-radius: 2px;
+    padding: 10px;
+    width: 260px;
+    &::placeholder {
+      color: map-get($color, placeholder-color);
+    }
+    &:disabled {
+      border: 1px solid #f0f0f0;
+    }
+    &:focus-visible {
+      outline-offset: max(2px, 0.1em);
+      outline: max(2px, 0.1em) dotted #ff5722;
+    }
+  }
+  input[type=number] {
+    border: 1px solid #cbcbcb;
+    border-radius: 2px;
+    padding: 10px;
+    width: 130px;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    &::placeholder {
+      color: map-get($color, placeholder-color);
+    }
+    &:disabled {
+      border: 1px solid #f0f0f0;
+    }
+    &:focus-visible {
+      outline-offset: max(2px, 0.1em);
+      outline: max(2px, 0.1em) dotted #ff5722;
+    }
+  }
+  input[type=email] {
+    border: 1px solid #cbcbcb;
+    border-radius: 2px;
+    padding: 10px;
+    width: 260px;
+    &::placeholder {
+      color: map-get($color, placeholder-color);
+    }
+    &:focus-visible {
+      outline-offset: max(2px, 0.1em);
+      outline: max(2px, 0.1em) dotted #ff5722;
+    }
+  }
 }
 
 // 옵션 컨텐츠 반복섹션 상속 사이즈
@@ -587,13 +753,14 @@
   min-width: 340px;
 }
 
-// 옵션 컨텐츠 반복섹션 textarea 
+// 옵션 컨텐츠 반복섹션 textarea
 @mixin option-items2 {
   @extend .option-items;
   height: 210px;
   .item-option {
-    width: 960px;
+    width: 100%;
     height: 80%;
+    margin: 20px;
     textarea {
       width: 100%;
       border: 1px solid map-get($border-color, basic);
@@ -610,14 +777,20 @@
   }
 }
 
-// 약관 컨텐츠 반복섹션 textarea 
+// 옵션 컨텐츠 반복섹션 progress
+@mixin option-items3 {
+  @extend .option-items;
+  height: 80px;
+}
+
+// 약관 컨텐츠 반복섹션 textarea
 @mixin option-items-terms {
   @extend .option-items;
   height: 500px;
   .item-option {
-    width: 960px;
+    width: 100%;
     height: 90%;
-    margin: 0 0 0 20px;
+    margin: 20px;
     textarea {
       width: 100%;
       border: 1px solid map-get($border-color, basic);
@@ -644,7 +817,7 @@
 
 
 //////////////////////////////////////
-// Admin 대시보드 하단 버튼 
+// Admin 대시보드 하단 버튼
 //////////////////////////////////////
 
 @mixin page-btn {
@@ -677,4 +850,89 @@
       font-weight: 400;
     }
   }
+}
+
+
+.hosting-progress {
+  @include flex-center-start;
+  gap: 30px;
+  position: relative;
+  width: 250px;
+  margin-right: 30px;
+  margin-top: -10px;
+  .warning {
+    position: absolute;
+    right: 0;
+    width: 66px;
+    font-size: 11px;
+    height: 32px;
+    z-index: 9;
+    background-color: #D0CECE;
+    text-align: center;
+    line-height: 32px;
+  }
+  ul {
+    @include flex-end-between;
+    width: 100%;
+    position: absolute;
+    z-index: 9;
+    bottom: -20px;
+    li:first-child {
+      &::after {
+        display: none;
+      }
+    }
+    li {
+      position: relative;
+      font-size: 10px;
+      &::after {
+        height: 10px;
+        background-color: #a9a9a9;
+        content: "";
+        display: block;
+        width: 1px;
+        position: absolute;
+        top: -9px;
+        right: 0;
+      }
+    }
+  }
+  .progress-volume {
+    width:250px;
+    height: 32px;
+    background-color: #EAEAEA;
+    position: relative;
+    &::after {
+      content: '';
+      display:block;
+      position: absolute;
+      top:0;
+      left:0;
+      height: 32px;
+      width:0;
+    }
+  }
+  .volume2 {
+    @extend .progress-volume;
+    &::after {
+      animation: progress2 1s ease forwards;
+      background-color: #0051CB;
+    }
+    @keyframes progress2{
+      0%{width: 0px}
+      100%{width: 24%;}
+    }
+  }
+  .volume3 {
+    @extend .progress-volume;
+    &::after {
+      animation: progress3 1s ease forwards;
+      background-color: #4082E9;
+    }
+    @keyframes progress3{
+      0%{width: 0px}
+      100%{width: 11%;}
+    }
+  }
+
 }
