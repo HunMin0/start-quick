@@ -7,7 +7,7 @@
 <script>
 
 export default {
-  name: "design",
+  name: "logoset",
   layout: "admin",
   data: () => ({
 
@@ -15,5 +15,3 @@ export default {
 
 }
 </script>
-
-
