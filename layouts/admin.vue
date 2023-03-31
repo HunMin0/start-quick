@@ -27,8 +27,8 @@
             <p>(1.0.0 ver 기준)</p>
           </div>
           <nav class="nav-side">
-            <ul v-if="$route.path == '/admin/design'">
-               <router-link
+            <ul v-if="$route.path.includes('/admin/design')">
+            <router-link
                   v-for="list in design_lists"
                   :key="list.key"
                   :to="list.link"
