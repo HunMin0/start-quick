@@ -15,7 +15,7 @@
                   class="header-menu-list"
                   class-active="active"
                   :title="list.title"
-                  exact>{{list.title}}
+                  >{{list.title}}
                 </router-link>
               </ul>
           </nav>
@@ -27,9 +27,9 @@
             <p>(1.0.0 ver 기준)</p>
           </div>
           <nav class="nav-side">
-            <ul>
+            <ul v-if="$route.path == '/admin/design'">
                <router-link
-                  v-for="list in dash_lists"
+                  v-for="list in design_lists"
                   :key="list.key"
                   :to="list.link"
                   tag="li"
@@ -38,6 +38,18 @@
                   :title="list.title"
                   exact><i :class="list.icon"></i>&emsp;{{list.title}}
                 </router-link>
+            </ul>
+            <ul v-else>
+              <router-link
+                v-for="list in dash_lists"
+                :key="list.key"
+                :to="list.link"
+                tag="li"
+                class="header-menu-list"
+                class-active="active"
+                :title="list.title"
+                exact><i :class="list.icon"></i>&emsp;{{list.title}}
+              </router-link>
             </ul>
           </nav>
         </aside>
