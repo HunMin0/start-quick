@@ -112,13 +112,20 @@
     .item-option { // 기본 옵션바
       @include item-option;
     }
+    .item-option2 { // 기본 옵션바2
+      @include item-option2;
+    }
     .item-option-340 { // 옵션바 임의사이즈 변경
       @include item-option-340;
     }
   }
-  // 옵션 컨텐츠 반복섹션 textarea 
+  // 옵션 컨텐츠 반복섹션 textarea
   .option-items2 {
     @include option-items2;
+  }
+  // 옵션 컨텐츠 반복섹션 progress
+  .option-items3 {
+    @include option-items3;
   }
   // 약관 컨텐츠 반복섹션 textarea
   .option-items-terms {

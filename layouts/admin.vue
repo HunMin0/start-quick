@@ -92,8 +92,16 @@ export default {
         {link: '/admin/dashboard/hosting', title: '호스팅/도메인 관리', icon: 'fa-regular fa-clipboard'},
         {link: '/admin/dashboard/terms', title: '약관 및 개인정보 설정', icon: 'fa-regular fa-file-lines'},
       ],
+      design_lists: [
+        {link: '/admin/design', title: '레이아웃 스타일', icon: 'fa-solid fa-tv'},
+        {link: '/admin/design/logoset', title: '로고/파비콘/썸네일', icon: 'fa-solid fa-table-columns'},
+        {link: '/admin/design/menuset', title: '메뉴 스타일', icon: 'fa-solid fa-chart-gantt'},
+        {link: '/admin/design/visualset', title: '비주얼 스타일', icon: 'fa-solid fa-toggle-off'},
+        {link: '/admin/design/sectionset', title: '섹션 컨텐츠', icon: 'fa-regular fa-clipboard'},
+        {link: '/admin/design/footerset', title: '하단(푸터)', icon: 'fa-regular fa-file-lines'},
+      ],
     }
-  }
-}
+  },
+};
 
 </script>

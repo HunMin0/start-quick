@@ -61,15 +61,15 @@
               <div class="item-title">
                 <label for="company-name">회사/단체명</label>
               </div>
-              <div class="item-option">
-                <input type='text' id="company-name" name='company-name' value='' placeholder="회사명 입력"/>
+              <div class="item-option2">
+                <input type='text' id="company-name" name='company-name' value='' placeholder="회사명 입력" class="inp-w260"/>
               </div>
             </div>
             <div class="option-items">
               <div class="item-title">
                 <label for="company-ceo">대표자 이름</label>
               </div>
-              <div class="item-option">
+              <div class="item-option2">
                 <input type='email' id="company-ceo" name='company-ceo' value='' placeholder="대표자명 입력"/>
               </div>
             </div>
@@ -77,7 +77,7 @@
               <div class="item-title">
                 <label for="company-email">대표 메일</label>
               </div>
-              <div class="item-option">
+              <div class="item-option2">
                 <input type='text' id="company-email" name='company-email' value='' placeholder="대표메일 입력"/>
               </div>
             </div>
@@ -85,30 +85,30 @@
               <div class="item-title">
                 주소
               </div>
-              <div class="item-option">
+              <div class="item-option2">
                 <input type='text' name='company-address' value='' placeholder="주소를 검색해주세요" disabled/>
               </div>
               <button class="option-btn-s">검색</button>&emsp;
-              <div class="item-title">
+              <div class="item-title2">
                 상세주소
               </div>
               <div class="item-option-340">
-                <input type='text' name='company-address2' value='' placeholder="상세주소 입력" disabled/>
+                <input type='text' name='company-address2' value='' placeholder="상세주소 입력" />
               </div>
             </div>
             <div class="option-items">
               <div class="item-title">
                 우편번호
               </div>
-              <div class="item-option">
-                <input type='text' name='zip-code' value='' placeholder="예) 12345"/>
+              <div class="item-option2">
+                <input type='number' name='zip-code' value='' placeholder="예) 12345" min="1" max="99999"/>
               </div>
             </div>
             <div class="option-items">
               <div class="item-title">
                 <label for="company-number">사업자등록번호</label>
               </div>
-              <div class="item-option">
+              <div class="item-option2">
                 <input type='text' id="company-number" name='company-number' value='' placeholder="예) 123-45-67891"/>
               </div>
             </div>
@@ -116,7 +116,7 @@
               <div class="item-title">
                 <label for="company-number2">통신판매업신고번호</label>
               </div>
-              <div class="item-option">
+              <div class="item-option2">
                 <input type='text' id="company-number2" name='company-number2' value='' placeholder="예) 2023-OOOO-1234"/>
               </div>
             </div>

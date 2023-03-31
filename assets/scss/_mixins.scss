@@ -87,6 +87,11 @@
   align-items: center;
   justify-content: space-evenly;
 }
+@mixin flex-stretch-start {
+  display: flex;
+  align-items: stretch;
+  justify-content: start;
+}
 @mixin flex-center-start {
   display: flex;
   align-items: center;
