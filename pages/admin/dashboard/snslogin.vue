@@ -14,8 +14,8 @@
                 SNS 로그인 사용여부
               </div>
               <div class="item-option-340">
-                  <input type='radio' name='whether' value='webopen' id="webopen"/> <label for="webopen" title="사용">사용</label>&emsp;
-                  <input type='radio' name='whether' value='preparing' id="preparing" checked/> <label for="preparing" title="미사용">미사용</label>&emsp;
+                  <input type='radio' name='whether' value='webopen' id="webopen" v-model="selectedSns" /> <label for="webopen" title="사용">사용</label>&emsp;
+                  <input type='radio' name='whether' value='preparing' id="preparing" v-model="selectedSns" checked /> <label for="preparing" title="미사용">미사용</label>&emsp;
               </div>
               <div class="item-text">
                 <p>· 소셜로그인을 사용 시 활성 키값을 입력하세요.</p>
@@ -26,7 +26,7 @@
         </div>
       </div>
 
-      <div class="option-grid">
+      <div class="option-grid" v-if="selectedSns === 'webopen'">
         <div class="option">
           <div class="option-title">
             <h1>SNS 정보설정</h1>
@@ -196,6 +196,7 @@ export default {
     isGoogleLoginEnabled2: false,
     isGoogleLoginEnabled3: false,
     isGoogleLoginEnabled4: false,
+    selectedSns : 'preparing',
   }),
 
 }

@@ -317,6 +317,7 @@
   border-radius: 3px;
   outline: none;
   transition: .35s;
+  font-size: 13px;
   cursor: pointer;
   &:focus-visible {
     outline-offset: max(2px, 0.1em);
@@ -541,12 +542,32 @@
     @extend .item-title;
     min-width: 130px;
   }
+
+  .item-title3 {
+    @extend .item-title;
+    min-width: 145px;
+    margin-left: 50px;
+  }
   .item-column {
     width: 100%;
     padding: 16px 0;
     .item-row {
       width: 100%;
       @include flex-center-start;
+    }
+  }
+  .item-columna {
+    padding-top: 16px;
+    .item-option {
+      @include flex-column-start;
+      min-width: auto;
+    }
+  }
+  .item-columns {
+    padding: 16px 0;
+    .item-option {
+      @include flex-column-start;
+      min-width: auto;
     }
   }
   .item-text {
@@ -564,6 +585,11 @@
 
   // }
 }
+// 옵션 컨텐츠 레이아웃 그리드
+// .page-layout-grid {
+
+// }
+
 
 // 옵션 컨텐츠 반복섹션
 @mixin item-option {
@@ -643,6 +669,7 @@
       border-radius: 2px;
       padding: 10px;
       width: 330px;
+      height: 40px;
       &::placeholder {
         color: map-get($color, placeholder-color);
       }
@@ -659,6 +686,7 @@
       border-radius: 2px;
       padding: 10px;
       width: 330px;
+      height: 40px;
       &::placeholder {
         color: map-get($color, placeholder-color);
       }
@@ -692,8 +720,15 @@
         margin-left: 10px;
       }
     }
+    .custom-input {
+      input[type=text] {
+        width: 95px;
+      }
+    }
 }
-
+.bind-set {
+  @include flex-center-start;
+}
 .item-option-box {
   background-color: #fbfbfb;
 }
@@ -752,6 +787,7 @@
     }
   }
 }
+
 
 // 옵션 컨텐츠 반복섹션 상속 사이즈
 @mixin item-option-340 {
@@ -940,5 +976,34 @@
       100%{width: 11%;}
     }
   }
-
+}
+.option-select {
+  .phrases-info {
+    position: relative;
+    font-size: 12px;
+    margin: 0 16px 8px;
+    &::after {
+      content: "";
+      position: absolute;
+      left: -15px;
+      top: 8px;
+      border-radius: 50%;
+      width: 8px;
+      height: 8px;
+    }
+  }
+  .phrases-info:first-child {
+    &::after {background-color: #4082E9;}
+  }
+  .phrases-info:nth-child(2) {
+    &::after {background-color: #E940B6;}
+  }
+  .phrases {
+    @include flex-center-start;
+    gap: 20px;
+    font-size: 14px;
+    input[type=file] {
+      margin: 10px 0;
+    }
+  }
 }
