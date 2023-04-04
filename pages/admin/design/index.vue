@@ -19,29 +19,25 @@
                       <p>기본 베이직 레이아웃</p>
                     </div>
                     <div class="template-title item-option">
-                      <input type='radio' name='template1' value='template1' id="template1" :checked="checkTemplate1" /> <label for="template1" title="접속허용">적용</label>&emsp;
-                      <input type='radio' name='template1' value='notemplate1' id="notemplate1" :checked="!checkTemplate1" /> <label for="notemplate1" title="접속제한">미적용</label>
+                      <input type='radio' v-model='template' value='basic' id="template1" :checked="checkTemplate1" /> <label for="template1" title="접속허용">기본 베이직</label>&emsp;
                     </div>
                   </div>
                   <div class="template-items">
                     <div class="template-img template_img1"></div>
                     <div class="template-title item-option">
-                      <input type='radio' name='template2' value='template2' id="template2" :checked="checkTemplate2" /> <label for="template2" title="접속허용">적용</label>&emsp;
-                      <input type='radio' name='template2' value='notemplate2' id="notemplate2" :checked="!checkTemplate2" /> <label for="notemplate2" title="접속제한">미적용</label>
+                      <input type='radio' v-model='template' value='template1' id="template2" :checked="checkTemplate2" /> <label for="template2" title="접속허용">풀레이아웃</label>&emsp;
                     </div>
                   </div>
                   <div class="template-items">
                     <div class="template-img template_img2"></div>
                     <div class="template-title item-option">
-                      <input type='radio' name='template3' value='template3' id="template3" :checked="checkTemplate3" /> <label for="template3" title="접속허용">적용</label>&emsp;
-                      <input type='radio' name='template3' value='notemplate3' id="notemplate3" :checked="!checkTemplate3" /> <label for="notemplate3" title="접속제한">미적용</label>
+                      <input type='radio' v-model='template' value='template2' id="template3" :checked="checkTemplate3" /> <label for="template3" title="접속허용">선택</label>&emsp;
                     </div>
                   </div>
                   <div class="template-items">
                     <div class="template-img template_img3"></div>
                     <div class="template-title item-option">
-                      <input type='radio' name='template4' value='template4' id="template4" /> <label for="template4" title="접속허용">적용</label>&emsp;
-                      <input type='radio' name='template4' value='notemplate4' id="notemplate4" checked/> <label for="notemplate4" title="접속제한">미적용</label>
+                      <input type='radio' v-model='template' value='template3' id="template4" /> <label for="template4" title="접속허용">선택</label>&emsp;
                     </div>
                   </div>
                 </div>
@@ -248,24 +244,25 @@ export default {
 
     checkTemplate1: true,
     checkTemplate2: false,
-    checkTemplate3: false
+    checkTemplate3: false,
+    template: 'basic',
   }),
   mounted() {
-    // template1가 체크되어 있는 경우
-    if (document.getElementsByName('template1')[0].checked) {
-      this.checkTemplate3 = false;
-      this.checkTemplate2 = false;
-    }
-    // template2이 체크되어 있는 경우
-    else if (document.getElementsByName('template2')[0].checked) {
-      this.checkTemplate1 = false;
-      this.checkTemplate3 = false;
-    }
-    // template3이 체크되어 있는 경우
-    else if (document.getElementsByName('template3')[0].checked) {
-      this.checkTemplate1 = false;
-      this.checkTemplate2 = false;
-    }
+    // // template1가 체크되어 있는 경우
+    // if (document.getElementsByName('template1')[0].checked) {
+    //   this.checkTemplate3 = false;
+    //   this.checkTemplate2 = false;
+    // }
+    // // template2이 체크되어 있는 경우
+    // else if (document.getElementsByName('template2')[0].checked) {
+    //   this.checkTemplate1 = false;
+    //   this.checkTemplate3 = false;
+    // }
+    // // template3이 체크되어 있는 경우
+    // else if (document.getElementsByName('template3')[0].checked) {
+    //   this.checkTemplate1 = false;
+    //   this.checkTemplate2 = false;
+    // }
   }
 
 }
