@@ -138,11 +138,11 @@
 부칙
 
 이 약관은 <사이트 개설일>부터 시행합니다.
-                  
+
                 </textarea>
               </div>
             </div>
-           
+
             <h3>
               법률 자문이나 법적 검토가 이루어지지 않았다면, 공정거래위원회의 표준약관을 수정없이 사용해야 합니다.<br>
               위 양식은 샘플로 제공되는 서식으로 운영형태에 따른 수정이 필요합니다.
@@ -322,11 +322,11 @@ IP주소, 쿠키, MAC주소, 서비스 이용기록, 방문기록, 불량 이용
 <!-- 사이트 오픈일에 맞게 수정 필요 -->
 <strong>제13조(개인정보 처리방침 시행 및 변경)</strong>
 이 개인정보 처리방침은 20XX. X. X부터 적용됩니다.
-                  
+
                 </textarea>
               </div>
             </div>
-           
+
             <h3>
               법률 자문이나 법적 검토가 이루어지지 않았다면, 공정거래위원회의 표준약관을 수정없이 사용해야 합니다.<br>
               위 양식은 샘플로 제공되는 서식으로 운영형태에 따른 수정이 필요합니다.
@@ -339,8 +339,7 @@ IP주소, 쿠키, MAC주소, 서비스 이용기록, 방문기록, 불량 이용
 
       <div class="page-btn">
         <button class="btn-save" title="저장하기">저장하기</button>
-        <button class="btn-next" title="다음으로">다음으로</button>
-        <button class="btn-disble" title="비활성상태" disabled>비활성상태</button>
+        <router-link to="/admin/design"><button class="btn-next" title="디자인관리">디자인관리</button></router-link>
       </div>
     </form>
   </div>

@@ -213,10 +213,9 @@
         </div>
       </div>
 
-
       <div class="page-btn">
         <button class="btn-save" title="저장하기">저장하기</button>
-        <button class="btn-next" title="다음으로">다음으로</button>
+        <router-link to="/admin/design/menuset"><button class="btn-next" title="다음으로">다음으로</button></router-link>
       </div>
     </form>
   </div>

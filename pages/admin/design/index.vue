@@ -19,25 +19,25 @@
                       <p>기본 베이직 레이아웃</p>
                     </div>
                     <div class="template-title item-option">
-                      <input type='radio' v-model='template' value='basic' id="template1" :checked="checkTemplate1" /> <label for="template1" title="접속허용">기본 베이직</label>&emsp;
+                      <input type='radio' v-model='template' value='basic' id="template1" :checked="checkTemplate1" /> <label for="template1" title="기본 베이직">기본 베이직</label>&emsp;
                     </div>
                   </div>
                   <div class="template-items">
                     <div class="template-img template_img1"></div>
                     <div class="template-title item-option">
-                      <input type='radio' v-model='template' value='template1' id="template2" :checked="checkTemplate2" /> <label for="template2" title="접속허용">풀레이아웃</label>&emsp;
+                      <input type='radio' v-model='template' value='template1' id="template2" :checked="checkTemplate2" /> <label for="template2" title="레이아웃 템플릿1">레이아웃 템플릿1</label>&emsp;
                     </div>
                   </div>
                   <div class="template-items">
                     <div class="template-img template_img2"></div>
                     <div class="template-title item-option">
-                      <input type='radio' v-model='template' value='template2' id="template3" :checked="checkTemplate3" /> <label for="template3" title="접속허용">선택</label>&emsp;
+                      <input type='radio' v-model='template' value='template2' id="template3" :checked="checkTemplate3" /> <label for="template3" title="레이아웃 템플릿2">레이아웃 템플릿2</label>&emsp;
                     </div>
                   </div>
                   <div class="template-items">
                     <div class="template-img template_img3"></div>
                     <div class="template-title item-option">
-                      <input type='radio' v-model='template' value='template3' id="template4" /> <label for="template4" title="접속허용">선택</label>&emsp;
+                      <input type='radio' v-model='template' value='template3' id="template4" /> <label for="template4" title="레이아웃 템플릿3">레이아웃 템플릿3</label>&emsp;
                     </div>
                   </div>
                 </div>
@@ -220,7 +220,7 @@
 
       <div class="page-btn">
         <button class="btn-save" title="저장하기">저장하기</button>
-        <button class="btn-next" title="다음으로">다음으로</button>
+        <router-link to="/admin/design/logoset"><button class="btn-next" title="다음으로">다음으로</button></router-link>
       </div>
     </form>
   </div>
