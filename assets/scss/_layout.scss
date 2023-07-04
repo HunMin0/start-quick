@@ -115,6 +115,9 @@
     .item-option2 { // 기본 옵션바2
       @include item-option2;
     }
+    .item-option3 { // 기본 옵션바3
+      @include item-option3;
+    }
     .item-option-340 { // 옵션바 임의사이즈 변경
       @include item-option-340;
     }
